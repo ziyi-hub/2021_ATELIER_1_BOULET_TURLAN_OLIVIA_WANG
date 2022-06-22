@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon panier{% endblock %}
+
+{% block header %}
+    {% include 'navbar.html.twig' %}
+{% endblock %}
+
+{% block main %}
+    <div class="content-colume scroll">
+        <div class="content-details">
+            <div class="content-product-photo content-photo-grand border-unset large">
+
+                {% for facture in facture %}
+                <p>Facture : {{ facture.numFacture }}</p>
+                {% endfor %}
+
+                <h2>Merci</h2><hr>
+                <p>Votre commande a été bien confirmé.</p>
+                <p>Nous avons bien reçu votre commande et nous sommes en train de le préparer.</p><hr>
+                <h3>Information d'utilisateur</h3>
+
+                {% for client in client %}
+                <strong>Adresse de livraison</strong><p>{{ client.nomUtilisateur }}</p><p>{{ client.adresse }}</p><br>
+                {% endfor %}
+
+                <strong>Méthode de livraison</strong><p>Chronopost</p><hr><br>
+                <button class="btn btn-accueil" type="submit">Retourner à l'accueil</button>
+            </div>
+            <form class="content-product-infos padding-product-infos backcolor-product-infos">
+                <h3>Sommaire</h3>
+
+                {% set frais =  5 %}
+                {% for sommaire in sommaire %}
+                <p>Sous-total {{ sommaire.montant }}€</p>
+                <p>Frais de livraison {{ frais }}€</p>
+                <hr>
+                <strong>Total à payer {{ sommaire.montant + frais }}€</strong>
+                {% endfor %}
+
+                <p>(Paiement est directement au magasin)</p>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
+

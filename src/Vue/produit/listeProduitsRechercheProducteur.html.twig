@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des produits{% endblock %}
+
+{% block header %}
+    {% include 'navbar.html.twig' %}
+{% endblock %}
+
+{% block main %}
+<div class="content-column">
+    <h1>Liste des produits</h1>
+    <button class="btn-drop">
+        Trier par <img src={{ base_path() }}"/images/trier.png" alt="tirer.png">
+        <div class="drop-down">
+            <ul class="drop-down-content">
+                {% for categorie in categorie %}
+                    <a href={{ url_for('recherchecategorie', {'categories' : categorie.idCategorie })}}>
+                        {{ categorie.nomCategorie }}
+                    </a>
+                {% endfor %}
+                {% for producteur in producteur %}
+                    <a href={{ url_for('rechercheproducteur', {'producteur' : producteur.idUtilisateur })}}>
+                        Producteur {{ producteur.idUtilisateur }}
+                    </a>
+                {% endfor %}
+            </ul>
+        </div>
+   </button>
+
+    <div class="content-list">
+    {% for recherche in recherches %}
+            <div class="content-product">
+                <div class="content-product-photo">
+                    <img src={{ base_path() }}"/images/logo_2.png">
+                </div>
+                <div class="content-product-details">
+                    <form method="#" action="#">
+                        <br>
+                        <p class="product-name">{{ recherche.nomProduit }}</p>
+                        <br>
+                        <p>Quantité (par kg)<input type="text" class="poids" name="poids"></p>
+                        <div class="content-details-button">
+                            <button class="btn-add">Ajouter au panier</button>
+                            <button class="btn-detail">
+                                <a href={{ url_for('detailproduit', {'produit' : recherche.idProduit }) }}>
+                                    Voir le détail
+                                </a>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+    {% endfor %}
+    </div>
+</div>
+
+
+{% endblock %}
+
+

@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Detail de la commande{% endblock %}
+
+{% block header %}
+    {% include 'navbar.html.twig' %}
+{% endblock %}
+
+{% block main %}
+
+    {% for command in commande %}
+    <div class="content-colume">
+        <div class="content-product-photo border-unset padding-commande">
+            <h3>Commande {{command.idCommande}}</h3><hr>
+            <h3>Information du {{command.nomUtilisateur}}</h3>
+            <strong>Adresse de livraison</strong>
+            <p>{{command.nomUtilisateur}}</p>
+
+            <p>{{command.adresse}}</p><br>
+
+            <strong>Montant total</strong>
+            <p>{{command.montant}} €</p><hr>
+    {% endfor %}
+
+    {% for produit in produits %}
+            <h3>Liste des produits</h3>
+            <div class="content-liste content-liste-commande">
+                <form class="padding-product-infos backcolor-product-infos">
+                    <h3>Producteur {{produit.idProduit}}</h3><hr>
+                    <div>
+                        <span>{{produit.nomProduit}} : </span>
+                        <span>Quantité</span>
+                        <span>{{produit.quantite}}</span>
+                    </div>
+                </form>
+            </div>
+    {% endfor %}
+            <div class="content-buttons">
+                <button class="btn btn-accueil" type="submit">Retourner à l'accueil</button>
+                <button class="btn" type="submit">Commande payée</button>
+                <button class="btn" type="submit">Commande livrée</button>
+            </div>
+        </div>
+    </div>
+
+    
+{% endblock %}
+
+

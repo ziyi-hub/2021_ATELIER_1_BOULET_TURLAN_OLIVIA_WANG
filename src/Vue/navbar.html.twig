@@ -1,0 +1,22 @@
+<ul class="header-container">
+    <img id="header-logo" src={{ base_path() }}"/images/logo_2.png" alt="logo">
+
+    {% if session.user.roleId == 1 %}
+        <li><a href="{{ '/producteur/' ~ session.id }}">Commandes en cours</a></li>
+        <li><a href="/deconnexion">Deconnexion</a></li>
+    {% elseif session.user.roleId == 2 %}
+        <li><a href="/gerant/tableau-de-bord">Voir le tableau de bord</a></li>
+        <li><a href="/gerant/list-commandes">Voir les commandes</a></li>
+        <li><a href="/deconnexion">Deconnexion</a></li>
+    {% else %}
+        <li><a href="/">Accueil</a></li>
+        <li><a href={{ url_for('nosproduits') }}>Nos produits</a></li>
+        <li><a href={{ url_for('nosproducteurs') }}>Nos producteurs</a></li>
+        <li><a href="/connexion">Connexion</a></li>
+    {% endif %}
+    {% if session.panier %}
+        <li id="li-panier"><a href="panier" class="header-panier"><span class="mdi mdi-cart"></span></a></li>
+    {% else %}
+
+    {% endif %}
+</ul>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href={{ base_path() }}"/css/style.css">
+        <link href="https://pictogrammers.github.io/@mdi/font/2.0.46/css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css">
+        <title>{% block title %}{% endblock %}</title>
+        
+        {% block stylesheets %}    
+        {% endblock %}
+    </head>
+    <body>
+        <header>
+            {% block header %}
+            {% endblock %}
+        </header>
+        <main>
+            {% block main %}
+            {% endblock %}
+        </main>
+        <footer>
+            <p>©2021 leHangar.local</p>
+        </footer>
+            <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        {% block javascripts %}
+        {% endblock %}
+    </body>
+</html>

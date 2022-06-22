@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {% if producteur %}
+        {{ producteur.nomUtilisateur }}
+    {% endif %}
+{% endblock %}
+
+{% block header %}
+    {% include 'navbar.html.twig' %}
+{% endblock %}
+
+{% block main %}
+    <div class="content-column">
+        <div class="content-details">
+            <img class="content-product-photo content-photo-grand" src={{ base_path() }}"/images/logo.png">
+            <form class="content-product-infos">
+                {% for producteur in producteur %}
+                    <p class="product-name-detail">{{ producteur.nomUtilisateur }}</p><hr>
+                    <p>Adresse mail : {{ producteur.mail }}</p>
+                    <p>Numéro de téléphone : {{ producteur.numTel }}</p>
+                {% endfor %}
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Maxime aspernatur odit. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+            </form>
+        </div>
+
+        <div class="content-product-similar">
+            <p class="product-similar">Photos supplémentaires</p>
+            <br>
+            <div class="container-product-similar">
+                <img class="content-product-photo content-photo-petit product-img" src={{ base_path() }}"/images/logo_2.png">
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+

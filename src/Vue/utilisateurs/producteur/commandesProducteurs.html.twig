@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des commandes{% endblock %}
+
+{% block header %}
+    {% include 'navbar.html.twig' %}
+{% endblock %}
+
+{% block main %}
+<div class="content-column">
+    <h1>Liste des commandes</h1>
+    <table class="content-table">
+        <tr>
+            <th>Produit</th>
+            <th>Quantité</th>
+        </tr>
+        <tbody>
+        {% for produit in tabQuantiteProduits %}
+            <tr>
+                <td>{{ produit.nomProduit }}</td>
+                <td>{{ produit.quantiteProduit }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

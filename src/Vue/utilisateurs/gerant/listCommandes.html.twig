@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block header %}
+    {% include 'navbar.html.twig' %}
+{% endblock %}
+
+{% block main %}
+    <div class="content-column">
+        <h1>Liste des commandes</h1>
+        <table class="content-table">
+            <tr>
+                <th>Commande</th>
+                <th>Client</th>
+                <th>Montant total</th>
+                <th>Payée</th>
+                <th>Livrée</th>
+            </tr>
+            <tbody>
+                {% for commande in commandes %}
+                <tr>
+                        <td><a href="{{ '/gerant/commande/' ~ commande.idCommande }}">Commande {{ commande.idCommande }}</a></td>
+                        <td>{{ commande.nomUtilisateur }}</td>
+                        <td>{{ commande.montant }}€</td>
+                        {% if commande.statutPayer == '1' %}
+                            <td>Oui</td>
+                        {% elseif commande.statutPayer == '0' %}
+                            <td>Non</td>
+                        {% endif %}
+                        {% if commande.statutLivraison == '1' %}
+                            <td>Oui</td>
+                        {% elseif commande.statutLivraison == '0' %}
+                            <td>Non</td>
+                        {% endif %}
+                </tr>
+                {% endfor %}
+
+
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
+
+

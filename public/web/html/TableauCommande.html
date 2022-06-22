@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--<link rel="stylesheet" href="../css/style.css">--> <!--css-->
+    <link rel="stylesheet" href="../../css/style.css"> <!--scss-->
+    <link href="https://pictogrammers.github.io/@mdi/font/2.0.46/css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tableau de commande</title>
+</head>
+<body>
+<header>
+    <ul class="header-container">
+        <img id="header-logo" src="../../images/logo_2.png" alt="logo">
+        <li><a href="">Accueil</a></li>
+        <li><a href="">Nos produits</a></li>
+        <li><a href="">Nos producteurs</a></li>
+        <li><a href="">Connexion</a></li>
+        <span class="mdi mdi-magnify">
+            <input type="text" class="recherche" id="header-recherche" placeholder="Tier la collection"/>
+            <a class="header-panier"><span class="mdi mdi-cart"></span></a>
+        </span>
+
+    </ul>
+</header>
+
+<div class="content-column">
+    <h1>Liste des commandes</h1>
+    <div class="header-container">
+        <span class="mdi mdi-magnify">
+		    <input type="text" class="recherche" id="product-recherche" placeholder="Rechercher un produit">
+		</span>
+        <select class="recherche">
+            <option value="#">#</option>
+            <option value="#">#</option>
+            <option value="#">#</option>
+        </select>
+    </div>
+    <table class="content-table">
+        <tr>
+            <th>Commande</th>
+            <th>Client</th>
+            <th>Montant total</th>
+            <th>État</th>
+        </tr>
+        <tbody>
+        <tr>
+            <td>Commande 1</td>
+            <td>Client 1</td>
+            <td>20.00€</td>
+            <td>ok</td>
+        </tr>
+        <tr>
+            <td>Commande 2</td>
+            <td>Client 2</td>
+            <td>20.00€</td>
+            <td>ok</td>
+        </tr>
+        <tr>
+            <td>Commande 3</td>
+            <td>Client 3</td>
+            <td>20.00€</td>
+            <td>ok</td>
+        </tr>
+        <tr>
+            <td>Commande 4</td>
+            <td>Client 4</td>
+            <td>20.00€</td>
+            <td>ok</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

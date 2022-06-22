@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--<link rel="stylesheet" href="../css/style.css">--> <!--css-->
+    <link rel="stylesheet" href="../../css/style.css"> <!--scss-->
+    <link href="https://pictogrammers.github.io/@mdi/font/2.0.46/css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Détail Producteur</title>
+</head>
+
+<body>
+<header>
+    <ul class="header-container">
+        <img id="header-logo" src="../../images/logo_2.png" alt="logo">
+        <li><a href="">Accueil</a></li>
+        <li><a href="">Nos produits</a></li>
+        <li><a href="">Nos producteurs</a></li>
+        <li><a href="">Connexion</a></li>
+        <span class="mdi mdi-magnify">
+            <input type="text" id="header-recherche" placeholder="Tier la collection" />
+            <a class="header-panier"><span class="mdi mdi-cart"></span></a>
+        </span>
+
+    </ul>
+</header>
+<div class="content-colume">
+    <div class="content-details">
+        <picture>
+            <source srcset="../../images/logo.png 400w, ../../images/logo_mid.png 1200w"
+                    media="(max-width: 1000px)"
+                    sizes="100vw"
+            >
+            <img src="../../images/logo.png" class="content-product-photo content-photo-grand" alt="" />
+        </picture>
+        <form class="content-product-infos">
+            <p>Producteur 1</p><hr>
+            <p>Producteur : Kevin</p>
+            <button class="btn btn-producteur" type="submit">Commander chez moi</button>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Maxime aspernatur odit. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
+        </form>
+    </div>
+
+    <div class="content-product-similaires">
+        <p>Photos supplémentaires</p>
+        <img class="content-product-photo content-photo-petit" src="../../images/logo_2.png">
+        <img class="content-product-photo content-photo-petit" src="../../images/logo_2.png">
+        <img class="content-product-photo content-photo-petit" src="../../images/logo_2.png">
+        <img class="content-product-photo content-photo-petit" src="../../images/logo_2.png">
+    </div>
+
+</div>
+
+</body>
+</html>

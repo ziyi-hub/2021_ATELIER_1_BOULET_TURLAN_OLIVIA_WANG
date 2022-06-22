@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--<link rel="stylesheet" href="../css/style.css">-->  <!--css-->
+    <link rel="stylesheet" href="../../css/style.css"><!--scss-->
+    <link href="https://pictogrammers.github.io/@mdi/font/2.0.46/css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Panier</title>
+</head>
+<body>
+<header>
+    <ul class="header-container">
+        <img id="header-logo" src="../../images/logo_2.png" alt="logo">
+        <li><a href="">Accueil</a></li>
+        <li><a href="">Nos produits</a></li>
+        <li><a href="">Nos producteurs</a></li>
+        <li><a href="">Connexion</a></li>
+        <span class="mdi mdi-magnify">
+            <input type="text" id="header-recherche" placeholder="Tier la collection" />
+            <a class="header-panier"><span class="mdi mdi-cart"></span></a>
+        </span>
+
+    </ul>
+</header>
+<div class="content-colume">
+    <div class="content-details">
+        <div class="content-product-photo content-photo-grand border-unset">
+            <h2>Mon panier</h2>
+            <!--produit dans panier-->
+            <div class="content-panier">
+                <img class="content-product-photo content-photo-petit" src="../../images/logo_2.png">
+                <form class="">
+                    <span>Pomme</span>
+                    <span>5.00€/kg</span>
+                    <p>Quantité :4</p>
+                    <button class="btn btn-supprimer" type="submit">Supprimer</button>
+                </form>
+                <div class="content-product-tarf">20.00€</div>
+            </div>
+            <!--produit dans panier-->
+            <div class="content-panier">
+                <img class="content-product-photo content-photo-petit" src="../../images/logo_2.png">
+                <form class="">
+                    <span>Pomme</span>
+                    <span>5.00€/kg</span>
+                    <p>Quantité :4</p>
+                    <button class="btn btn-supprimer" type="submit">Supprimer</button>
+                </form>
+                <div class="content-product-tarf">20.00€</div>
+            </div>
+            <hr>
+            <p class="content-sous-total">Sous-total: 29.00€</p>
+            <hr>
+        </div>
+        <form class="content-product-infos padding-product-infos backcolor-product-infos">
+            <h3>Sommaire</h3>
+            <p>Sous-total 29.00€</p>
+            <p>Frais de livraison 5.00€</p>
+            <br>
+            <strong>Total à payer 34.00€</strong>
+            <hr>
+            <button class="btn btn-valider" type="submit">Valider mon panier</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

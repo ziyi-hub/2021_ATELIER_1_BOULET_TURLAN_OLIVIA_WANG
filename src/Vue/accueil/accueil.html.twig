@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block header %}
+    {% include 'navbar_accueil.html.twig' %}
+{% endblock %}
+
+{% block main %}
+    <div class="content">
+        <picture>
+            <source srcset={{ base_path() }}"/images/logo.png 400w, {{ base_path() }}/images/logo_mid.png 1000w"
+                    media="(max-width: 1000px)"
+                    sizes="100vw"
+            >
+            <img src={{ base_path() }}"/images/logo.png" id="couverture" alt="logo">
+        </picture>
+        <h1 class="content-text">Bienvenue à leHangar.local!</h1>
+    </div>
+{% endblock %}
+
+

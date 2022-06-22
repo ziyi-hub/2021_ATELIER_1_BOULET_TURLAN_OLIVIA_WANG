@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon panier{% endblock %}
+
+{% block header %}
+    {% include 'navbar.html.twig' %}
+{% endblock %}
+
+{% block main %}
+    <div class="content-colume">
+        <div class="content-details">
+            <div class="content-product-photo content-photo-grand border-unset">
+                <p>Panier > Information d'utilisateur > Facture</p><hr>
+                <form method="post" action='/panier/info' >
+                    <h3>Adresse de livraison</h3>
+                    <input type="text" id="nom" name="nom" placeholder="Nom d'utilisateur" required>
+                    <input type="text" id="numTel" name="numTel" placeholder="Numéro de téléphone" required>
+                    <input type="text" id="mail" name="mail" placeholder="Adresse mail" required>
+                    <input type="text" id="adresse" name="adresse" placeholder="Adresse" required>
+                    {% if sommaire %}
+                        <input type="hidden" value={{ sommaire + frais }} name="montant">
+                    {% endif %}
+                    <button class="btn btn-commande" type="submit">Valider ma commande</button>
+
+                </form>
+                <hr>
+                <div class="content-details-button">
+                    <a href="/panier">
+                        <button class="btn btn-retourner" type="submit">Retourner au panier</button>
+                    </a>
+                </div>
+            </div>
+            <form class="content-product-infos padding-product-infos backcolor-product-infos" >
+                <h3>Sommaire</h3>
+                {% set frais =  5 %}
+                {% if sommaire %}
+                    {% set sommaire = sommaire - 5 %}
+                    <p>Sous-total {{ sommaire }}€</p>
+                    <p>Frais de livraison {{ frais }}€</p>
+                    <hr>
+                    <strong>Total à payer {{ sommaire + frais }}€</strong>
+                {% endif %}
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
+

@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des producteurs{% endblock %}
+
+{% block header %}
+    {% include 'navbar.html.twig' %}
+{% endblock %}
+
+{% block main %}
+<div class="content-column">
+    <h1>Liste des producteurs</h1>
+
+    <div class="content-list">
+        {% for producteurs in producteurs %}
+            <a href={{ url_for('detailproducteur', {'producteur' : producteurs.idUtilisateur }) }}>
+                <div class="content-product producteur">
+                    <div class="content-product-photo">
+                        <img src={{ base_path() }}"/images/logo_2.png">
+                    </div>
+                    <div class="content-product-details">
+                        <p>{{ producteurs.nomUtilisateur }}</p>
+                    </div>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+

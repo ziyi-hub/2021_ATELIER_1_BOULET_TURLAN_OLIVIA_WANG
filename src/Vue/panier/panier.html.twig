@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon panier{% endblock %}
+
+{% block header %}
+    {% include 'navbar.html.twig' %}
+{% endblock %}
+
+{% block main %}
+
+    <div class="content-column">
+        <div class="content-details">
+            <div class="content-product-photo content-photo-grand border-unset">
+                <h2>Mon panier</h2>
+                <div class="content-panier">
+                    {% set somme = 0 %}
+                    {% for ligne in session.panier %}
+                    <img class="content-product-photo content-photo-petit" src={{ base_path() }}"/images/logo_2.png">
+                        <form method="POST" action="{{ '/panier/suppression/' ~ ligne.idProduit }}">
+                            <span>{{ ligne.nom }}</span>
+                            <span>{{ ligne.prix }}€/kg</span>
+                            <p>Quantité : {{ ligne.quantiteProduit }}</p>
+                            <input type="hidden" name="quantite" value="{{ ligne.quantiteProduit }}">
+                            <button type="submit" class="btn btn-supprimer">Supprimer</button>
+                        </form>
+                        {% set total =  ligne.prix * ligne.quantiteProduit %}
+                        {% set somme =  somme + total %}
+                        <div class="content-product-tarf">{{ total }}€</div>
+                    {% endfor %}
+                </div>
+                <hr>
+                <p class="content-sous-total">Sous-total:
+                    {{ somme }}€
+                </p>
+                <hr>
+            </div>
+            <form class="content-product-infos padding-product-infos backcolor-product-infos" method="post" action="/panier/valider">
+                <h3>Sommaire</h3>
+                <p>Sous-total {{ somme }}€</p>
+                {% set frais =  5 %}
+                <p>Frais de livraison {{ frais }}€</p>
+                <br>
+                <strong>Total à payer {{ somme + frais }}€</strong>
+                <input type="hidden" value={{ somme + frais }} name="montant">
+                <hr>
+                <button class="btn btn-valider" type="submit">Valider mon panier</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
+

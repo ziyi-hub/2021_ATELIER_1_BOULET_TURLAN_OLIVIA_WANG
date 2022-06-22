@@ -1,0 +1,6 @@
+/vendor/
+/mysql/
+/.idea/
+composer.lock
+/var/
+/public/css/style.css.map

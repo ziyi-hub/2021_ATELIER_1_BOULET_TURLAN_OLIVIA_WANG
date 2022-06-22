@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tableau de bord{% endblock %}
+
+{% block header %}
+    {% include 'navbar.html.twig' %}
+{% endblock %}
+
+{% block main %}
+<div class="content-column">
+    <h1>Tableau de bord</h1>
+    <table class="content-table">
+        <tr>
+            <th>Nombre de producteurs</th>
+            <th>Nombre de clients</th>
+            <th>Nombre de commandes</th>
+            <th>Chiffre d'affaire Global</th>
+        </tr>
+        <tbody>
+            <tr>
+                <td>{{ nbProducteurs }}</td>
+                <td>{{ nbClientGlobal }}</td>
+                <td>{{ nbCommandesGlobal }}</td>
+                <td>{{ caGlobal }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="content-table">
+        <tr>
+            <th>Nom de producteur</th>
+            <th>Chiffre d'affaire</th>
+        </tr>
+        <tbody>
+            {% for producteur in caProducteurs %}
+                <tr>
+                    <td>{{producteur.nomProducteur}}</td>
+                    <td>{{producteur.caProducteur}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+
+
